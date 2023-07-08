@@ -1,0 +1,116 @@
+plugins {
+    id 'com.android.application'
+    id 'org.jetbrains.kotlin.android'
+    id 'org.jetbrains.kotlin.kapt'
+    id 'kotlinx-serialization'
+    id 'com.huawei.agconnect'
+}
+ext {
+    preDexEnabled = System.getProperty("pre-dex", "true")
+    abiCodes = ['armeabi-v7a': 1, 'x86': 2, 'x86_64': 3, 'arm64-v8a': 4]
+}
+
+android {
+    namespace 'com.example.translator_4_17'
+    compileSdk 33
+
+    defaultConfig {
+        applicationId "com.example.translator_4_17"
+        minSdk 28
+        targetSdk 33
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        vectorDrawables {
+            useSupportLibrary true
+        }
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments += ["room.schemaLocation": "$projectDir/schemas".toString()]
+            }
+        }
+
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    splits {
+        abi {
+            universalApk true
+            enable true
+        }
+    }
+    flavorDimensions "version"
+    productFlavors {
+        libre {
+            dimension "version"
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_11
+        targetCompatibility JavaVersion.VERSION_11
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+    buildFeatures {
+        compose true
+    }
+    composeOptions {
+        kotlinCompilerExtensionVersion "1.4.2"
+    }
+    packagingOptions {
+        resources {
+            excludes += '/META-INF/{AL2.0,LGPL2.1}'
+        }
+    }
+
+}
+
+dependencies {
+
+    implementation 'androidx.core:core-ktx:1.10.0'
+    implementation 'androidx.lifecycle:lifecycle-runtime-ktx:2.6.1'
+    //noinspection GradleDependency
+    implementation 'androidx.activity:activity-compose:1.7.0'
+    implementation 'androidx.appcompat:appcompat:1.6.1'
+    implementation 'androidx.preference:preference-ktx:1.2.0'
+    implementation 'androidx.core:core-ktx:1.7.0'
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.5'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
+
+    // Compose
+    implementation "androidx.compose.ui:ui:$compose_version"
+    implementation "androidx.compose.ui:ui-tooling-preview:$compose_version"
+    implementation 'androidx.lifecycle:lifecycle-viewmodel-compose:2.6.1'
+    implementation 'androidx.compose.material3:material3:1.1.0-alpha08'
+    //noinspection GradleDependency
+    implementation "androidx.compose.material:material-icons-extended:$compose_version"
+    androidTestImplementation "androidx.compose.ui:ui-test-junit4:$compose_version"
+    debugImplementation "androidx.compose.ui:ui-tooling:$compose_version"
+    debugImplementation "androidx.compose.ui:ui-test-manifest:$compose_version"
+    implementation "androidx.navigation:navigation-compose:2.5.3"
+
+
+    // Retrofit
+    implementation 'com.squareup.retrofit2:retrofit:2.9.0'
+    implementation "org.jetbrains.kotlinx:kotlinx-serialization-json:1.5.0"
+    implementation 'com.jakewharton.retrofit:retrofit2-kotlinx-serialization-converter:0.8.0'
+    implementation 'com.squareup.retrofit2:converter-scalars:2.9.0'
+    implementation 'com.squareup.okhttp3:logging-interceptor:4.10.0'
+
+    // Room database
+    implementation 'androidx.room:room-runtime:2.5.0'
+    kapt "androidx.room:room-compiler:2.5.0"
+    //Huawei Sdk
+    implementation 'com.huawei.agconnect:agconnect-core:1.8.1.300'
+    implementation 'com.huawei.hms:ml-computer-voice-asr-plugin:3.9.0.300'
+
+
+}

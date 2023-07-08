@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name" translatable="false">云译</string>
+    <string name="short_app_name" translatable="false">云译</string>
+    <!-- Dialog -->
+    <string name="okay">好的</string>
+    <string name="cancel">取消</string>
+    <string name="app_language">语言</string>
+    <!-- Text -->
+    <string name="enter_text">输入文字</string>
+    <string name="paste">粘贴</string>
+    <string name="copy">复制</string>
+    <string name="auto">自动</string>
+    <string name="translate">翻译</string>
+    <string name="language_not_supported">该语言不支持！</string>
+    <!-- Settings -->
+    <string name="instance">实例</string>
+    <string name="options">设置</string>
+    <string name="history">历史</string>
+    <string name="history_enabled">无痕使用</string>
+    <string name="fetch_delay">翻译延迟</string>
+    <string name="fetch_delay_summary">插入文本和获取译文之间的延迟</string>
+    <string name="history_summary">追踪最近翻译的文本</string>
+    <string name="compact_history_summary">每条历史记录中默认仅显示前三行文本</string>
+    <string name="additional_info">更多内容</string>
+    <string name="additional_info_summary">可用时展示附加的翻译信息</string>
+
+    <string name="translation">翻译</string>
+    <string name="general">所有</string>
+    <string name="system">系统</string>
+    <string name="character_warning_limit">字数限制</string>
+    <string name="character_warning_limit_summary">在字数超出时发出警告</string>
+    <string name="none">0</string>
+    <string name="translate_automatically">自动翻译</string>
+    <string name="translate_automatically_summary">在一定的延迟后请求自动翻译</string>
+    <string name="nothing_here">什么也没有</string>
+    <string name="Happy">开心的音乐</string>
+    <string name="Normal">一般</string>
+    <string name="Unhappy">励志音乐</string>
+    <string name="Play">暂停</string>
+
+    <!-- Theme -->
+    <string name="theme_auto">系统颜色</string>
+    <string name="theme_light">亮色</string>
+    <string name="theme_dark">暗色</string>
+    <string name="accent_color">按钮颜色</string>
+    <string name="go_back">恢复</string>
+    <!-- History -->
+    <string name="clear_history">清除历史</string>
+    <string name="open">打开</string>
+    <!-- Exception -->
+    <string name="server_error">连接服务器时发生错误</string>
+    <string name="unknown_error">未知错误</string>
+    <!-- Additional Info -->
+    <string name="detected_language">检测语言</string>
+    <string name="definition">定义</string>
+    <string name="example">例子</string>
+    <string name="similar">相似词</string>
+    <string name="transliteration">读音</string>
+    <!-- Languages -->
+    <string name="search">搜索</string>
+    <string name="translate_from">翻译自</string>
+    <string name="translate_to">翻译成</string>
+    <string name="favorites">收藏的语言</string>
+    <string name="all_languages">所有语言</string>
+</resources>
